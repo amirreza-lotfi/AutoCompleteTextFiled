@@ -47,7 +47,7 @@ then define your list. for example:
 At the end, create call AutoCompleteTextFiled and pass value of TextFiled and your list:
 
     AutoCompleteTextFiled(
-        textFiledValue = text.value,
+        textFiledValue = text,
         itemComposable = { item ->
              Box(
 	     	Modifier.clickable { 

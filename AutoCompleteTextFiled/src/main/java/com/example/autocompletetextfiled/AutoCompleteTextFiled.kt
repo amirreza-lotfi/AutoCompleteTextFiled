@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun AutoCompleteTextFiled(
-    textFiledValue:String,
+    textFiledValue:MutableState<String>,
     itemComposable: @Composable (item:String) -> Unit,
     autoCompleteAdapter: AutoCompleteAdapter,
     columnContainerModifier: Modifier = Modifier,
@@ -23,7 +23,7 @@ fun AutoCompleteTextFiled(
     horizontalAlignmentOfContainerColumn: Alignment.Horizontal = Alignment.Start,
     flingBehaviorOfContainerColumn: FlingBehavior = ScrollableDefaults.flingBehavior(),
 ) {
-    autoCompleteAdapter.onTextFiledChanged(textFiledValue)
+    autoCompleteAdapter.onTextFiledChanged(textFiledValue.value)
     LazyColumn(
         modifier = columnContainerModifier,
         contentPadding = contentPaddingOfContainerColumn,
@@ -40,7 +40,7 @@ fun AutoCompleteTextFiled(
 
 @Composable
 fun AutoCompleteTextFiled(
-    textFiledValue:String,
+    textFiledValue:MutableState<String>,
     itemComposable: @Composable (item:String) -> Unit,
     itemList: List<String>,
     columnContainerModifier: Modifier = Modifier,
@@ -54,7 +54,7 @@ fun AutoCompleteTextFiled(
         AutoCompleteAdapter(itemList)
     }
 
-    autoCompleteAdapter.onTextFiledChanged(textFiledValue)
+    autoCompleteAdapter.onTextFiledChanged(textFiledValue.value)
     LazyColumn(
         modifier = columnContainerModifier,
         contentPadding = contentPaddingOfContainerColumn,

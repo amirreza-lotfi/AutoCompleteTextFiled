@@ -30,14 +30,14 @@ __Step 2.__ Add the dependency in build.gradle(module level)
   # Use in project
   First, create your own TextField :
   
-    var text by remember {
+    var text = remember {
         mutableStateOf("")
     }
     
     Column {
         TextField(
-            value = text,
-            onValueChange ={text = it}
+            value = text.value,
+            onValueChange = {text.value = it}
         )
     }
 then define your list. for example:
@@ -47,9 +47,13 @@ then define your list. for example:
 At the end, create call AutoCompleteTextFiled and pass value of TextFiled and your list:
 
     AutoCompleteTextFiled(
-        textFiledValue = text,
+        textFiledValue = text.value,
         itemComposable = { item ->
-             Box{
+             Box(
+	     	Modifier.clickable { 
+            		textFiledValue.value = item
+        	}
+	     ){
                  Text(item)
              }            
         },

@@ -51,7 +51,7 @@ At the end, create call AutoCompleteTextFiled and pass value of TextFiled and yo
         itemComposable = { item ->
              Box(
 	     	Modifier.clickable { 
-            		textFiledValue.value = item
+            	    textFiledValue.value = item
         	}
 	     ){
                  Text(item)

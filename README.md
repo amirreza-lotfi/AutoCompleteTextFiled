@@ -1,6 +1,6 @@
 # AutoCompleteTextFiled
 This library is AutoCompleteTextFiled library in jetpack compose framework. 
-The Composable only displays items from the list that begin with the value of TextFiled (by default. You can customize your filter function)..
+The Composable only displays items from the list that begin with the value of TextFiled (by default. You can customize your filter function).
 # Screenshots
 <div>
   <img src="/screenshots/1.jpg" width="200" style="margin-right:100px"/>
@@ -41,8 +41,11 @@ __Step 2.__ Add the dependency in build.gradle(module level)
         )
     }
 then define your list. for example:
-    val listOfCity = val listOfCity = listOf("Tehran","Baghdad", "Paris", "Ardabil", "Shiraz", "Oslo")
+
+    val listOfCity = listOf("Tehran","Baghdad", "Paris", "Ardabil", "Shiraz", "Oslo")
+
 At the end, create call AutoCompleteTextFiled and pass value of TextFiled and your list:
+
     AutoCompleteTextFiled(
         textFiledValue = text,
         itemComposable = { item ->
@@ -52,6 +55,7 @@ At the end, create call AutoCompleteTextFiled and pass value of TextFiled and yo
         },
         itemList = listOfCity 
     )
+
 AutoCompleteTextFiled is a lazyColumn and there is a modifier parameter that you can customize your list. also 
 itemComposable is a Composable that each item of list placed in. <br/><br/>
 AutoCompleteTextField has other overload that has AutoCompleteTextFiledAdapter. This adapter manage list.

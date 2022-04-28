@@ -1,5 +1,5 @@
-# AutoCompleteTextFiled-Compose
-This library is AutoCompleteTextFiled  library in jetpack compose framework. 
+# AutoCompleteTextFiled
+This library is AutoCompleteTextFiled library in jetpack compose framework. 
 The Composable only displays items from the list that begin with the value of TextFiled (by default. You can customize your filter function)..
 # Screenshots
 <div>

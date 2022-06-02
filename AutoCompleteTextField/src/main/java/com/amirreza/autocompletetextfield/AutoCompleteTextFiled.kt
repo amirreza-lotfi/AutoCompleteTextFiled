@@ -1,19 +1,22 @@
-package com.example.autocompletetextfield
+package com.amirreza.autocompletetextfield
 
 import androidx.compose.foundation.gestures.FlingBehavior
 import androidx.compose.foundation.gestures.ScrollableDefaults
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.lazy.*
-import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+
 @Composable
 fun AutoCompleteTextFiled(
-    textFiledValue:MutableState<String>,
+    textFiledValue: MutableState<String>,
     itemComposable: @Composable (item:String) -> Unit,
     autoCompleteAdapter: AutoCompleteAdapter,
     columnContainerModifier: Modifier = Modifier,
